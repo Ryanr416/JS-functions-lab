@@ -50,8 +50,11 @@ Define a function, as a function expression, sumArray that takes an array of num
 
 
 
-const sumArray = function [10, 12, 11];
-{return 10 + 12 + 11};
+const sumArray = function(); {
+
+  return 10 + 12 + 11
+}
+
 console.log(sumArray);
 
 
