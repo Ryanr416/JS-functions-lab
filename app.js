@@ -50,21 +50,31 @@ Define a function, as a function expression, sumArray that takes an array of num
 
 
 
-const sumArray = function(); {
-
-  return 10 + 12 + 11
+const sumArray = function(arr) {
+let sum = 0;
+for (let i =0; i < arr.length; i++) {
+  sum += arr[i];
+}
+return sum;
 }
 
-console.log(sumArray);
+const numbers = [10, 11, 22];
+console.log(sumArray(numbers));
 
 
 Define a function, as a function declaration, multiplyArray that takes an array of numbers and returns the product those numbers. For example, multiplyArray([2, 4, 5]); would return 40.
 
 
 
-function multiplyArray([1, 6, 4]);
-{return 1 * 6 * 4};
-console.log(multiplyArray);
+function multiplyArray(arr) {
+  let product = 1;
+  for (let i = 0; i < arr.length; i++) {
+    product *= arr[i];
+  }
+  return product;
+}
+console.log(multiplyArray([2, 4, 4]));
+
 
 
 Define a function, as a function expression, numArgs that returns the number of arguments passed to the function when called.
@@ -78,26 +88,50 @@ const numArgs = function() {
 Define a function, as a function declaration, reverseString that takes a string, reverses the characters, and returns it. For example, reverseString('rockstar'); would return the string "ratskcor".
 
 
-function reverseString('ryan'); {
-    return reverseString;
-    console.log(reverseString)
-};
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+console.log(reverseString('ryan'));
+
 
 
 Define a function, as a function expression, longestStringInArray that takes an array of strings as an argument and returns the length of the longest string.
 
-const longestStringInArray = function() {
-return longest.length;
+const longestStringInArray = function(arr) {
+let longestLength = 0;
 
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].length > longestLength) {
+    longestLength = arr[i].length;
+  }
 }
+return longestLength;
+}
+
+const strings = ['dog', 'cat', 'horse'];
+console.log(longestStringInArray(strings));
+
+
 
 
 Define a function, as a function declaration, stringsLongerThan that takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
 
-function stringsLongerThan(['salad', 'veggies', 'fruits'], 2); {
+function stringsLongerThan(arr, length) {
+  const result = [];
+
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i].length > length) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+console.log(stringsLongerThan(['salad', 'veggies', 'fruits'], 2));
 
 
-return stringsLongerThan;
-console.log(stringsLongerThan)
 
-};
